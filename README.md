@@ -10,6 +10,4 @@
 $ npm install
 ```
 
-## 3- Link
-
 [Link](http://link)
