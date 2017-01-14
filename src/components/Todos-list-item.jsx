@@ -14,7 +14,7 @@ export default class TodosListItem extends React.Component {
         if(this.state.isEditing){
             return (
                 <td>
-                    <button>Save</button>
+                    <button onClick={this.onSaveClick.bind(this)}>Save</button>
                     <button onClick={this.OnCancelClick.bind(this)}>Cancel</button>
                 </td>
             );
@@ -34,7 +34,15 @@ export default class TodosListItem extends React.Component {
             cursor: 'pointer'
         }
 
-        console.log(this.props);
+        if(this.state.isEditing){
+            return(
+                <td>
+                    <form onSubmit={this.onSaveClick.bind(this)}>
+                        <input type="text" defaultValue={task} ref='editInput'/>
+                    </form>
+                </td>
+            );
+        }
         return (
             <td style={taskStyle} onClick={this.props.toggleTask.bind(this, task)}>
                 {task}
@@ -57,5 +65,15 @@ export default class TodosListItem extends React.Component {
 
     OnCancelClick(){
         this.setState({isEditing: false});
+    }
+
+    onSaveClick(event){
+        event.preventDefault();
+
+        const oldTask = this.props.task;
+        const newTask = this.refs.editInput.value;
+
+        this.props.saveTask(oldTask,newTask);
+         this.setState({isEditing: false});
     }
 }
