@@ -7,6 +7,7 @@ export default class TodosList extends React.Component {
     renderItems(){
         return _.map(this.props.list, (element, index)=> < TodosListItem key={index}{...element}/>);
     }
+
     render(){
 
         return(
