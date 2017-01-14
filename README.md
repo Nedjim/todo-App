@@ -9,5 +9,5 @@
 ```
 $ npm install
 ```
-
-[Link](http://link)
+<!--
+[Link](http://link)-->
