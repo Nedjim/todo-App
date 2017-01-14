@@ -28,7 +28,9 @@ export default class App extends React.Component {
             <div>
                 <h1>React ToDos App</h1>
                 <CreateTodo createTask ={this.createTask.bind(this)}/>
-                <TodosList list={this.state.list}/>
+                <TodosList
+                    list={this.state.list}
+                    toggleTask={this.toggleTask.bind(this)} />
             </div>
         );
     }
@@ -38,6 +40,14 @@ export default class App extends React.Component {
             task: newTask,
             isCompleted: false
         });
+        this.setState({list: this.state.list});
+    }
+
+    toggleTask(task){
+        const foundTodo = _.find(this.state.list, element => element.task === task);
+
+        foundTodo.isCompleted = !foundTodo.isCompleted;
+
         this.setState({list: this.state.list});
     }
 }
