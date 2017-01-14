@@ -5,11 +5,11 @@ import CreateTodo from './Create-todo.jsx';
 const todosList = [
     {
         task: "Jouer",
-        isCompleted: false
+        isCompleted: true
     },
     {
         task: "Sortir",
-        isCompleted: true
+        isCompleted: false
     }];
 
 export default class App extends React.Component {
@@ -25,8 +25,8 @@ export default class App extends React.Component {
 
      render() {
         return (
-            <div>
-                <h1>React ToDos App</h1>
+            <div id="content">
+                <h1>React Todo List</h1>
                 <CreateTodo list={this.state.list}  createTask ={this.createTask.bind(this)}/>
                 <TodosList
                     list={this.state.list}

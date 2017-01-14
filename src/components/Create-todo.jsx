@@ -14,7 +14,7 @@ export default class CreateTodo extends React.Component {
         if(!this.state.error){ return null;}
 
         return (
-            <div style={{color: 'red'}}>
+            <div style={{color: '#B71C1C'}}>
                 {this.state.error}
             </div>
         );
