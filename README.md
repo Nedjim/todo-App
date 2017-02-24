@@ -1,4 +1,4 @@
-# Todo Application
+# Todo List
 
 ## 1- Technology
 - React.js
@@ -8,6 +8,5 @@
 ## 2- Installation
 ```
 $ npm install
+$ webpack-dev-server
 ```
-<!--
-[Link](http://link)-->
